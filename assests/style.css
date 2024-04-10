@@ -105,3 +105,39 @@ a:hover{
         text-decoration: none;
         cursor: pointer;
       }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+
+    #personList {
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 5px;
+    }
+
+    .person {
+        margin-bottom: 10px;
+    }
+
+    .person input[type="text"] {
+        width: 200px;
+        margin-right: 10px;
+        padding: 5px;
+    }
+
+    .person select {
+        padding: 5px;
+    }
+
+    .addBtn {
+        padding: 5px 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
