@@ -39,43 +39,93 @@ function addPerson() {
     const personDiv = document.createElement("div");
     personDiv.classList.add("person");
 
+    const nameInputLabel = document.createElement("label");
+    nameInputLabel.textContent = "Name:";
     const nameInput = document.createElement("input");
     nameInput.setAttribute("type", "text");
-    nameInput.setAttribute("placeholder", "Name");
+    nameInput.setAttribute("placeholder", "Enter name");
 
-    const ageSelect = document.createElement("select");
-    ageSelect.innerHTML = `
-        <option value="20">20</option>
-        <option value="30">30</option>
-        <option value="40">40</option>
-        <option value="50">50</option>
-    `;
+    const roundLabels = ["1st Round", "2nd Round", "3rd Round", "4th Round", "5th Round"]; // Labels for each round
+
+    // Create input fields and labels for each round
+    const roundInputs = [];
+    const hoopHeightInputs = [];
+    for (let i = 0; i < 5; i++) {
+        const roundLabel = document.createElement("label");
+        roundLabel.textContent = roundLabels[i];
+        
+        const roundInput = document.createElement("input");
+        roundInput.setAttribute("type", "number");
+        roundInput.setAttribute("min", "0");
+        
+        const hoopHeightLabel = document.createElement("label");
+        hoopHeightLabel.textContent = "Hoop Height:";
+        const hoopHeightInput = document.createElement("select");
+        hoopHeightInput.innerHTML = `
+            <option value="8.5">8.5 or lower</option>
+            <option value="9">9</option>
+            <option value="9.5">9.5</option>
+            <option value="10">10</option>
+        `;
+        
+        roundInputs.push(roundInput);
+        hoopHeightInputs.push(hoopHeightInput);
+        
+        personDiv.appendChild(roundLabel);
+        personDiv.appendChild(roundInput);
+        personDiv.appendChild(hoopHeightLabel);
+        personDiv.appendChild(hoopHeightInput);
+    }
 
     const addButton = document.createElement("button");
     addButton.textContent = "Add";
 
     // Add event listener to the button
     addButton.addEventListener("click", function() {
-        // Retrieve name and age values
+        // Retrieve name, hoopHeight, and round values
         const name = nameInput.value;
-        const age = ageSelect.value;
+        const roundData = [];
+        for (let i = 0; i < 5; i++) {
+            const roundScore = parseInt(roundInputs[i].value || 0); // Convert empty string to 0
+            const hoopHeight = hoopHeightInputs[i].value;
+            roundData.push({ score: roundScore, hoopHeight: hoopHeight });
+        }
 
-        // Create new list item
+        // Calculate total score based on hoopHeight for each round
+        const totalScores = roundData.map(round => {
+            if (round.hoopHeight === "8.5") {
+                return round.score;
+            } else if (round.hoopHeight === "9") {
+                return 2 * round.score;
+            } else if (round.hoopHeight === "9.5") {
+                return 3 * round.score;
+            } else if (round.hoopHeight === "10") {
+                return 4 * round.score;
+            }
+        });
+
+        const totalScore = totalScores.reduce((acc, curr) => acc + curr, 0);
+
+        // Create new list item with total score
         const listItem = document.createElement("li");
-        listItem.textContent = `${name}, ${age}`;
+        listItem.textContent = `${name}, Total Score: ${totalScore}`;
 
         // Append list item to the person list
         personList.appendChild(listItem);
 
         // Clear input fields
         nameInput.value = "";
+        roundInputs.forEach(input => input.value = "");
+        hoopHeightInputs.forEach(input => input.selectedIndex = 0); // Reset hoopHeight to default
     });
 
     // Append elements to the person div
+    personDiv.appendChild(nameInputLabel);
     personDiv.appendChild(nameInput);
-    personDiv.appendChild(ageSelect);
     personDiv.appendChild(addButton);
 
     // Append person div to the person list
     personList.appendChild(personDiv);
 }
+
+
