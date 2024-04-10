@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/tournament_tracker/assests/style.css">
+    <title>Tournament Tracker!</title>
+</head>
+<body>
+     <!-- Header -->
+     <header>
+        <nav class="contactBar">
+            <h1>
+                Tournament Tracker
+            </h1>
+            <div class='topNav' id="myLinks">
+                <a href="#" id="abtBtn">About</a>
+                <a href="#" id="whyBtn">Rules</a>
+            </div>
+        </nav>
+    </header>
+
+    <div id="aboutModal" class="modal">
+        <div class="aboutContent">
+            <span class="abtClose">&times;</span>
+            <h1 class="modalTitle">About</h1><br>
+            <p>This application was built to help my wife decide what to cook for dinner.</p>
+        </div>
+    </div>
+    <div id="rulesModal" class="modal">
+        <div class="rulesContent">
+            <span class="rulesClose">&times;</span>
+            <h1 class="modalTitle">Rules</h1><br>
+            <p>The Chirstian Kids basketball tournament has 5 rounds. Each round a child will have the opportunity to take 10 shots. 
+                We will record the amount of shots made out of the 10 taken. Depending on the height of the basketball hoop, additional points will be awarded.</p>
+                <ul>
+                    <li>If height of rim is 8.5 feet or shorter, each shot made is worth 1 point.</li>
+                    <li>If height of rim is 9 feet, each shot made is worth 2 points.</li>
+                    <li>If height of rim is 9.5 feet, each shot made is worth 3 points.</li>
+                    <li>If height of rim is 10 feet, each shot made is worth 4 points.</li>
+                    <li>Considering Cai (The youngest) is only 5 years old and is not strong enough ye tot reach the rim at max height, each shot she makes is worth 4 points.</li>
+                </ul>
+                <p>At the end of the 5 rounds, we will enter the amount each player made along with the selected height to tally up the final scores and crown a winner!</p>
+        </div>
+    </div>
+    <div id="contactModal" class="modal">
+        <div class="contactContent">
+            <span class="contactClose">&times;</span>
+            <h1 class="modalTitle">Contact</h1><br>
+            <p><a href="https://www.gmail.com" id="emailLink" target="_blank">christianyehudah@gmail.com</a></p><br>
+            <p>Also, check out my socials in the footer</p>
+        </div>
+    </div>
+    <main>
+        <section>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="/tournament_tracker/index.js"></script>
+</body>
+</html>
