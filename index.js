@@ -25,9 +25,8 @@ rulesSpan.onclick = function(){
 
 //click anywhere to close modal
 window.onclick = function(event){
-    if(event.target === about || event.target === rules || event.target === contact){
+    if(event.target === about || event.target === rules){
         about.style.display = 'none'
         rules.style.display = 'none'
-        contact.style.display = 'none'
     }
 }

@@ -67,7 +67,7 @@ a:hover{
 
   /* Modal Content */
   .aboutContent {
-    background-color: lightgray;
+    background-color: white;
     margin: auto;
     padding: 20px;
     border: none;
@@ -78,7 +78,7 @@ a:hover{
   }
 
   .rulesContent {
-    background-color: lightgray;
+    background-color: white;
     margin: auto;
     padding: 20px;
     border: none;
