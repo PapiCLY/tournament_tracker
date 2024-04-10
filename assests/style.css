@@ -5,11 +5,12 @@
 
 #myLinks{
     display: flex;
-    align-items: center;
+    justify-content: center;
 }        
 
 #myLinks a{
-    margin-right: 40px;
+    text-align: center;
+    margin: 0 10px;
 }
 
 h1{
@@ -18,6 +19,8 @@ h1{
     color: black;
     margin: 0;
     margin-left: 15px;
+    padding: 50px;
+    text-align: center;
 }
 
 a{
@@ -55,13 +58,6 @@ a:hover{
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
-    font-weight: bold;
-  }
-
-  #emailLink{
-    color: rgb(111, 83, 211);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
     font-weight: bold;
   }
 
