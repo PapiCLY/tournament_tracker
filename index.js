@@ -34,6 +34,7 @@ window.onclick = function(event){
 
 function addPerson() {
     const personList = document.getElementById("personList");
+    const finalScoresSection = document.getElementById("finalScores");
 
     // Create elements
     const personDiv = document.createElement("div");
@@ -113,6 +114,11 @@ function addPerson() {
         // Append list item to the person list
         personList.appendChild(listItem);
 
+        // Append name and total score to final scores section
+        const finalScoreItem = document.createElement("div");
+        finalScoreItem.textContent = `${name}, Total Score: ${totalScore}`;
+        finalScoresSection.appendChild(finalScoreItem);
+
         // Clear input fields
         nameInput.value = "";
         roundInputs.forEach(input => input.value = "");
@@ -127,5 +133,6 @@ function addPerson() {
     // Append person div to the person list
     personList.appendChild(personDiv);
 }
+
 
 
