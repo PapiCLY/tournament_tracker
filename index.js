@@ -1,4 +1,4 @@
-const numsAndChars = /[^a-zA-Z0-9\s]/;
+//const numsAndChars = /[^a-zA-Z0-9\s]/;
 let about = document.getElementById('aboutModal')
 let aboutBtn = document.getElementById('abtBtn')
 let aboutSpan = document.querySelector('.abtClose');
@@ -39,7 +39,7 @@ function addPerson() {
     const personList = document.getElementById("personList");
     const finalScoresSection = document.getElementById("finalScores");
 
-    let totalScore = 0; // Define totalScore variable here
+    let totalScore = 0; 
 
     // Create elements
     const personDiv = document.createElement("div");
@@ -92,7 +92,7 @@ function addPerson() {
         const name = nameInput.value;
         const roundData = [];
         for (let i = 0; i < 5; i++) {
-            const roundScore = parseInt(roundInputs[i].value || 0); // Convert empty string to 0
+            const roundScore = parseInt(roundInputs[i].value || 0); 
             const hoopHeight = hoopHeightInputs[i].value;
             roundData.push({ score: roundScore, hoopHeight: hoopHeight });
         }
