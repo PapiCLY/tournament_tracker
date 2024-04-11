@@ -122,25 +122,27 @@ a:hover{
     }
 
     .person {
-        width: 30%; /* Fixed width for each card */
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box; 
-        display: flex; 
-        flex-direction: column; 
-        margin-right: 20px; 
+        width: calc(30% - 20px); 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column; 
+    margin-right: 20px; 
     }
 
     .person label {
         margin-bottom: 5px;
+        font-weight: bold;
+        padding: 5px;
     }
     
 
     .person input[type="text"] {
         padding: 5px;
-        width: calc(100% - 10px); 
-        margin-bottom: 10px; 
+    width: 100%; 
+    margin-bottom: 10px; 
     }
 
     .person button {
@@ -152,6 +154,11 @@ a:hover{
     border-radius: 4px;
     cursor: pointer;
     }
+
+/* Reorder elements so that name input is positioned at the top */
+.person label:nth-child(1) {
+    order: -1; 
+}
 
     .person select {
         padding: 5px;
@@ -247,9 +254,9 @@ a:hover{
 
       /* For mobile phones: */
 @media only screen and (max-width: 600px) {
-    /* Adjust card width for smaller screens */
+    
     .person {
-        width: 100%; /* Fixed width for each card */
+        width: 100%; 
     }
 }
   
