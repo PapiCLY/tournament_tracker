@@ -210,6 +210,21 @@ a:hover{
     cursor: pointer;
   }
 
+  #playerBtn{
+    padding: 8px 20px;
+    border: none;
+    background: lightcoral;
+    color: white;
+    border-radius: 5px;
+    margin: 10px;
+    transition: background-color 0.3s ease
+  }
+
+  #playerBtn:hover{
+    background: rgb(233, 89, 89);
+    cursor: pointer;
+  }
+
   #showHighestScorerButton {
     background-color: #4CAF50; 
     border: none;
