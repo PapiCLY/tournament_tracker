@@ -148,12 +148,18 @@ a:hover{
     .person button {
     margin-top: 10px; 
     padding: 5px 10px;
-    background-color: #4CAF50;
+    background-color: #2b922d;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
     }
+
+    .person button:hover {
+        background-color: #164e17;
+        cursor: pointer;
+        }
 
 /* Reorder elements so that name input is positioned at the top */
 .person label:nth-child(1) {
@@ -166,10 +172,16 @@ a:hover{
 
     .addBtn {
         padding: 5px 10px;
-        background-color: #4CAF50;
+        background-color: #242e25;
         color: white;
         border: none;
         border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .addBtn:hover {
+        background-color: #0aa112;
         cursor: pointer;
     }
 
