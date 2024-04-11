@@ -5,6 +5,9 @@ let aboutSpan = document.querySelector('.abtClose');
 let rules = document.getElementById('rulesModal')
 let rulesBtn = document.getElementById('rulesBtn')
 let rulesSpan = document.querySelector('.rulesClose')
+let highestScorer = null;
+let highestScore = null;
+
 
 //opens modal
 aboutBtn.onclick = function(){
@@ -35,6 +38,8 @@ window.onclick = function(event){
 function addPerson() {
     const personList = document.getElementById("personList");
     const finalScoresSection = document.getElementById("finalScores");
+
+    let totalScore = 0; // Define totalScore variable here
 
     // Create elements
     const personDiv = document.createElement("div");
@@ -105,7 +110,7 @@ function addPerson() {
             }
         });
 
-        const totalScore = totalScores.reduce((acc, curr) => acc + curr, 0);
+        totalScore = totalScores.reduce((acc, curr) => acc + curr, 0); // Update totalScore
 
         // Create new list item with total score
         const listItem = document.createElement("li");
@@ -119,10 +124,11 @@ function addPerson() {
         finalScoreItem.textContent = `${name}, Total Score: ${totalScore}`;
         finalScoresSection.appendChild(finalScoreItem);
 
-        // Clear input fields
-        nameInput.value = "";
-        roundInputs.forEach(input => input.value = "");
-        hoopHeightInputs.forEach(input => input.selectedIndex = 0); // Reset hoopHeight to default
+        // Update highest score and player
+        if (!highestScore || totalScore > highestScore) {
+            highestScore = totalScore;
+            highestScorer = name;
+        }
     });
 
     // Append elements to the person div
@@ -132,7 +138,24 @@ function addPerson() {
 
     // Append person div to the person list
     personList.appendChild(personDiv);
+
+    //showHighestScorerModal();
 }
+
+// Show modal with highest scorer
+function showHighestScorerModal() {
+    const modal = document.getElementById("highestScorerModal");
+    const highestScorerText = document.getElementById("highestScorerText");
+    const highestScoreText = document.getElementById("highestScoreText");
+    highestScorerText.textContent = highestScorer;
+    highestScoreText.textContent = highestScore;
+    modal.style.display = "block";
+}
+
+
+
+document.getElementById("showHighestScorerButton").addEventListener("click", showHighestScorerModal);
+
 
 
 
